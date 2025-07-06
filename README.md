@@ -10,6 +10,13 @@ Bu proje, sağlık kurumları için web tabanlı, yapay zeka destekli bir randev
 - **Ahmet Furkan Çayırtepe**
 - **Ozan Kalınağaç**
 
+## Süreç ve Yöntem
+
+- Proje yönetimi ve süreç takibi için **Trello** aktif olarak kullanılmaktadır.
+- Scrum metodolojisiyle, düzenli sprint planlamaları, günlük standup'lar ve sprint retrospektifleri gerçekleştirilmektedir.
+- Ekip içi iletişim ve şeffaflık ön planda tutulmakta, ilerleme ve riskler düzenli olarak değerlendirilmekte ve raporlanmaktadır.
+- Sürekli iyileştirme ve iteratif geliştirme yaklaşımı benimsenmiştir.
+
 ## Sprint 1: Tanışma, Kaynaşma ve Proje Planlama
 
 - Grup değişikliği sonrası ilk sprintte ekip üyeleriyle tanışma ve kaynaşma sağlandı.
@@ -62,8 +69,9 @@ Bu proje, sağlık kurumları için web tabanlı, yapay zeka destekli bir randev
 
 ## Mentorler için Notlar
 
-- Proje, ilk sprintte ekip içi uyum ve planlamaya odaklandı.
-- n8n ile otomasyon, LLM entegrasyonu ve temel AI modülü MVP'nin ana odak noktası.
+- Proje yönetimi ve ilerleme, Trello üzerinden düzenli olarak takip edilmekte ve raporlanmaktadır.
+- n8n ile otomasyon, LLM entegrasyonu ve temel AI modülü MVP'nin ana odak noktasıdır.
+- Ekip içi iletişim, şeffaflık ve düzenli raporlama süreç boyunca ön planda tutulmaktadır.
 - Veri bilimi/analizi modülüyle, sistemin çıktılarından anlamlı içgörü elde edilmesi hedefleniyor.
 - 1 aylık süreçte, temel işlevsellik ve demo odaklı bir MVP çıkarılması planlanıyor.
 - Riskler: Gerçek veri eksikliği, LLM API kullanımı, zaman yönetimi.
