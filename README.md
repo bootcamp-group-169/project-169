@@ -47,8 +47,8 @@ Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli 
 
 ### Sprint 2 Başarıları
 
-- ✅ **LangChain + Google Gemini Entegrasyonu:** Agno'dan LangChain'e başarılı geçiş
-- ✅ **Gradio Arayüzü:** Streamlit'ten Gradio'ya modern UI geçişi
+- ✅ **LangChain + Google Gemini Entegrasyonu:** Modern AI framework entegrasyonu
+- ✅ **Gradio Arayüzü:** Modern ve responsive web arayüzü
 - ✅ **Prompt Template'leri:** Beslenme, fitness ve Q&A için özelleştirilmiş promptlar
 - ✅ **Kişiselleştirme:** Yaş, kilo, boy, aktivite seviyesi ve hedeflere göre özel planlar
 - ✅ **Türkçe Destek:** Tamamen Türkçe arayüz ve çıktılar
@@ -59,7 +59,7 @@ Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli 
 ### Sprint 2 Teknik Detaylar
 
 - **Frontend:** Gradio 4.44.0 (Modern, responsive UI)
-- **AI Framework:** LangChain 0.3.26 (Agno yerine)
+- **AI Framework:** LangChain 0.3.26
 - **AI Model:** Google Gemini 2.0 Flash
 - **Prompt Engineering:** 3 farklı prompt template (Beslenme, Fitness, Q&A)
 - **Architecture:** Modular yapı, kolay genişletilebilir
@@ -131,8 +131,8 @@ Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli 
 ## Mentorler için Notlar
 
 - **AI Health & Fitness Planner Agent v1 başarıyla tamamlandı!** ✅
-- LangChain framework'üne başarılı geçiş yapıldı (Agno'dan)
-- Modern Gradio arayüzü ile kullanıcı deneyimi iyileştirildi
+- LangChain framework'ü ile modern AI entegrasyonu sağlandı
+- Modern Gradio arayüzü ile kullanıcı deneyimi optimize edildi
 - %100 test coverage ile kalite güvencesi sağlandı
 - Kapsamlı dokümantasyon ve kullanım kılavuzları hazırlandı
 - Proje yönetimi ve ilerleme, Trello üzerinden düzenli olarak takip edilmekte ve raporlanmaktadır.
