@@ -101,10 +101,6 @@ Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli 
 **Gün 5:** Test sistemi kuruldu ve %100 test coverage sağlandı.
 **Gün 6:** Dokümantasyon tamamlandı ve final testler yapıldı.
 
-## Sprint Board Screenshotları
-
-_[Trello Sprint Board ekran görüntüleri buraya eklenecek]_
-
 ### Sprint 2 Tamamlanan Görevler
 
 - [x] Ekip tanışma ve rol paylaşımı
