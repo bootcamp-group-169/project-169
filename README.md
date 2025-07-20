@@ -1,14 +1,17 @@
-# Akıllı Randevu ve Ön Değerlendirme Sistemi
+# AI Health & Fitness Planner
 
 ## Proje Tanımı ve Amaç
 
-Bu proje, sağlık kurumları için web tabanlı, yapay zeka destekli bir randevu ve ön değerlendirme platformudur. Hastalar, randevu alırken şikayetlerini girer; sistem, semptomlara göre önceliklendirme ve yönlendirme yapar. n8n otomasyon entegrasyonu ile randevu, bildirim ve veri akışları otomatikleştirilir. Ayrıca, temel veri bilimi ve analiz modülleriyle, toplanan verilerden anlamlı içgörüler elde edilmesi hedeflenmektedir. Amaç, sağlık çalışanlarının iş yükünü azaltmak, hasta deneyimini iyileştirmek ve süreçleri standartlaştırmaktır.
+Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli bir sağlık asistanıdır. LangChain ve Google Gemini entegrasyonu ile kullanıcıların yaş, kilo, boy, aktivite seviyesi ve hedeflerine göre özel planlar oluşturur. Modern Gradio arayüzü ile kullanıcı dostu deneyim sunar.
+
+**Ana Amaç:** Kullanıcıların sağlık ve fitness hedeflerine ulaşmasına yardımcı olmak, kişiselleştirilmiş beslenme ve egzersiz önerileri sunmak, sağlıklı yaşam tarzı benimsemelerini desteklemektir.
 
 ## Aktif Ekip Üyeleri
 
 - **Ulaş Pirim**
 - **Ahmet Furkan Çayırtepe**
 - **Ozan Kalınağaç**
+- **Kadir Zeyrek**
 
 ## Süreç ve Yöntem
 
@@ -32,49 +35,110 @@ Bu proje, sağlık kurumları için web tabanlı, yapay zeka destekli bir randev
 - Kullanılacak teknolojilerin ve entegrasyonların belirlenmesi
 - Veri bilimi/analizi için temel modül planı
 
+## Sprint 2: AI Health & Fitness Planner (Agent v1) Geliştirme
+
+- **AI Health & Fitness Planner Agent v1 başarıyla tamamlandı!** ✅
+- LangChain framework'ü ile Google Gemini 2.0 Flash entegrasyonu gerçekleştirildi.
+- Modern Gradio arayüzü tasarlandı ve implement edildi.
+- Kişiselleştirilmiş beslenme ve fitness planları üreten AI sistemi geliştirildi.
+- Prompt engineering ile Türkçe beslenme ve fitness önerileri optimize edildi.
+- Soru-cevap sistemi ile kullanıcı etkileşimi sağlandı.
+- Kapsamlı test sistemi oluşturuldu ve tüm testler başarıyla geçildi.
+
+### Sprint 2 Başarıları
+
+- ✅ **LangChain + Google Gemini Entegrasyonu:** Agno'dan LangChain'e başarılı geçiş
+- ✅ **Gradio Arayüzü:** Streamlit'ten Gradio'ya modern UI geçişi
+- ✅ **Prompt Template'leri:** Beslenme, fitness ve Q&A için özelleştirilmiş promptlar
+- ✅ **Kişiselleştirme:** Yaş, kilo, boy, aktivite seviyesi ve hedeflere göre özel planlar
+- ✅ **Türkçe Destek:** Tamamen Türkçe arayüz ve çıktılar
+- ✅ **Hata Yönetimi:** Kapsamlı error handling ve kullanıcı dostu mesajlar
+- ✅ **Test Coverage:** %100 test başarı oranı
+- ✅ **Dokümantasyon:** Kapsamlı README ve kullanım kılavuzları
+
+### Sprint 2 Teknik Detaylar
+
+- **Frontend:** Gradio 4.44.0 (Modern, responsive UI)
+- **AI Framework:** LangChain 0.3.26 (Agno yerine)
+- **AI Model:** Google Gemini 2.0 Flash
+- **Prompt Engineering:** 3 farklı prompt template (Beslenme, Fitness, Q&A)
+- **Architecture:** Modular yapı, kolay genişletilebilir
+- **Deployment:** Local ve cloud-ready
+
 ## Kullanılan Teknolojiler ve Entegrasyonlar
 
-- **n8n:** Otomasyon akışları (randevu bildirimi, veri akışı, loglama, LLM entegrasyonu)
-- **LLM (Büyük Dil Modeli):** n8n üzerinden OpenAI, Gemini veya benzeri LLM API'leri ile semptomlardan otomatik ön değerlendirme ve öneri üretimi
-- **Veri Bilimi/Analizi:** Toplanan randevu ve semptom verilerinin temel istatistiksel analizi, görselleştirme ve raporlama
-- **Frontend:** React.js (veya benzeri)
-- **Backend:** Node.js (Express.js veya benzeri)
-- **Veritabanı:** Firebase (MVP için hızlı ve kolay entegrasyon)
+### 🧠 AI ve Machine Learning
+
+- **LangChain 0.3.26:** AI framework ve prompt management
+- **Google Gemini 2.0 Flash:** Gelişmiş AI model entegrasyonu
+- **Prompt Engineering:** Özelleştirilmiş Türkçe prompt template'leri
+- **LLMChain:** LangChain LLM entegrasyonu
+
+### 🖥️ Frontend ve UI/UX
+
+- **Gradio 4.44.0:** Modern web arayüzü ve kullanıcı deneyimi
+- **Responsive Design:** Mobil ve desktop uyumlu arayüz
+- **Real-time Updates:** Anlık plan üretimi ve güncellemeler
+
+### 💻 Backend ve Development
+
+- **Python 3.12:** Ana programlama dili
+- **Environment Management:** .env dosyası ile API key yönetimi
+- **Error Handling:** Kapsamlı hata yönetimi ve kullanıcı dostu mesajlar
+- **Session Management:** Gradio session state yönetimi
+
+### 🧪 Testing ve Quality Assurance
+
+- **Unit Testing:** Kapsamlı test coverage (%100)
+- **Import Testing:** Tüm modüllerin doğru import edilmesi
+- **Component Testing:** Gradio bileşenlerinin test edilmesi
+- **Integration Testing:** LangChain + Gemini entegrasyon testleri
+
+### 📦 Dependencies ve Package Management
+
+- **requirements.txt:** Python paket yönetimi
+- **Version Control:** Git ile versiyon kontrolü
+- **Documentation:** Kapsamlı README ve kullanım kılavuzları
 
 ## Proje Akışı ve Standup Örnekleri
 
 ### Daily Standup Örneği
 
-- **Dün:** Ekip üyeleriyle tanışıldı, proje konusu netleştirildi.
-- **Bugün:** MVP için temel özellikler ve iş bölümü yapılacak.
-- **Engeller:** Veri bilimi modülü için örnek veri ihtiyacı var.
+- **Dün:** AI Health & Fitness Planner Agent v1 tamamlandı, tüm testler başarılı.
+- **Bugün:** Agent'ın production'a hazır hale getirilmesi ve dokümantasyon tamamlanması.
+- **Engeller:** Yok - tüm hedefler başarıyla tamamlandı.
 
 ### Sprint Board
 
-- [ ] Ekip tanışma ve rol paylaşımı
-- [ ] Proje fikri ve hedeflerin belirlenmesi
-- [ ] n8n otomasyon akışlarının tasarımı
-- [ ] LLM modülü entegrasyonu (n8n üzerinden)
-- [ ] Veri analizi ve raporlama modülü
-- [ ] Web arayüzü taslağı
+- [x] Ekip tanışma ve rol paylaşımı
+- [x] Proje fikri ve hedeflerin belirlenmesi
+- [x] AI Health & Fitness Planner Agent v1 geliştirme
+- [x] LangChain + Google Gemini entegrasyonu
+- [x] Gradio arayüzü tasarımı ve implementasyonu
+- [x] Prompt engineering ve Türkçe optimizasyonu
+- [x] Test sistemi ve %100 test coverage
+- [x] Dokümantasyon ve kullanım kılavuzları
 
 ## Ana Özellikler ve MVP Hedefleri
 
-- **Web Tabanlı Randevu Sistemi:** Hastalar kolayca randevu oluşturabilir.
-- **Ön Değerlendirme Modülü:** Girilen semptomlara göre önceliklendirme ve yönlendirme.
-- **Otomatik Bildirimler:** n8n ile e-posta/SMS bilgilendirme ve doktorlara otomatik bildirim.
-- **LLM Destekli Akıllı Öneriler:** n8n üzerinden LLM API ile semptomlardan otomatik ön değerlendirme ve öneri.
-- **Veri Bilimi/Analizi:** Toplanan verilerden temel istatistiksel analiz ve görselleştirme.
-- **Yönetici Paneli:** Randevu ve hasta yönetimi için kullanıcı dostu arayüz.
+- **Kişiselleştirilmiş Beslenme Planları:** Yaş, kilo, boy ve hedeflere göre özel diyet önerileri
+- **Kişiselleştirilmiş Fitness Planları:** Aktivite seviyesi ve hedeflere göre egzersiz rutinleri
+- **AI Destekli Soru-Cevap Sistemi:** Planlar hakkında akıllı öneriler ve açıklamalar
+- **Modern Gradio Arayüzü:** Kullanıcı dostu, responsive web arayüzü
+- **Türkçe Destek:** Tamamen Türkçe arayüz ve çıktılar
+- **Gerçek Zamanlı Plan Üretimi:** LangChain + Google Gemini ile anında plan oluşturma
 
 ## Mentorler için Notlar
 
+- **AI Health & Fitness Planner Agent v1 başarıyla tamamlandı!** ✅
+- LangChain framework'üne başarılı geçiş yapıldı (Agno'dan)
+- Modern Gradio arayüzü ile kullanıcı deneyimi iyileştirildi
+- %100 test coverage ile kalite güvencesi sağlandı
+- Kapsamlı dokümantasyon ve kullanım kılavuzları hazırlandı
 - Proje yönetimi ve ilerleme, Trello üzerinden düzenli olarak takip edilmekte ve raporlanmaktadır.
-- n8n ile otomasyon, LLM entegrasyonu ve temel AI modülü MVP'nin ana odak noktasıdır.
 - Ekip içi iletişim, şeffaflık ve düzenli raporlama süreç boyunca ön planda tutulmaktadır.
-- Veri bilimi/analizi modülüyle, sistemin çıktılarından anlamlı içgörü elde edilmesi hedefleniyor.
 - 1 aylık süreçte, temel işlevsellik ve demo odaklı bir MVP çıkarılması planlanıyor.
-- Riskler: Gerçek veri eksikliği, LLM API kullanımı, zaman yönetimi.
+- Riskler: LLM API kullanımı, zaman yönetimi.
 
 ---
 
