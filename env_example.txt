@@ -1,0 +1,7 @@
+# Google Gemini API Key
+# https://aistudio.google.com/apikey adresinden alabilirsiniz
+GOOGLE_API_KEY=your_api_key_here
+
+# Uygulama ayarları
+PORT=7860
+HOST=0.0.0.0 
