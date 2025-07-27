@@ -7,6 +7,30 @@
       "symptoms": "karın ağrısı yaptı",
       "notes": "",
       "timestamp": "2025-07-27T18:00:16.962757"
+    },
+    {
+      "date": "2025-07-27",
+      "meal_type": "Kahvaltı",
+      "food_name": "soslu tavuk",
+      "symptoms": "karnım ağrıdı ",
+      "notes": "",
+      "timestamp": "2025-07-27T18:16:02.313287"
+    },
+    {
+      "date": "2025-07-27",
+      "meal_type": "Kahvaltı",
+      "food_name": "baharatlı tavuk",
+      "symptoms": "karnım ağrıdı",
+      "notes": "",
+      "timestamp": "2025-07-27T18:16:51.140772"
+    },
+    {
+      "date": "2025-07-27",
+      "meal_type": "Kahvaltı",
+      "food_name": "baharatlı patates",
+      "symptoms": "karnım ağrıdı ",
+      "notes": "",
+      "timestamp": "2025-07-27T18:18:55.572437"
     }
   ]
 }

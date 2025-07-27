@@ -103,22 +103,39 @@ import datetime
 def save_to_local_storage(data, filename):
     """Veriyi local storage'a kaydet"""
     try:
-        with open(filename, 'w', encoding='utf-8') as f:
+        # Proje klasöründe data klasörü oluştur
+        data_dir = "data"
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
+        
+        filepath = os.path.join(data_dir, filename)
+        with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"✅ Veri kaydedildi: {filepath}")
         return True
     except Exception as e:
-        print(f"Kaydetme hatası: {e}")
+        print(f"❌ Kaydetme hatası: {e}")
         return False
 
 def load_from_local_storage(filename):
     """Local storage'dan veri yükle"""
     try:
-        with open(filename, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        data_dir = "data"
+        filepath = os.path.join(data_dir, filename)
+        
+        if not os.path.exists(filepath):
+            print(f"📁 Dosya bulunamadı: {filepath}")
+            return {}
+            
+        with open(filepath, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        print(f"✅ Veri yüklendi: {filepath}")
+        return data
     except FileNotFoundError:
+        print(f"📁 Dosya bulunamadı: {filename}")
         return {}
     except Exception as e:
-        print(f"Yükleme hatası: {e}")
+        print(f"❌ Yükleme hatası: {e}")
         return {}
 
 # Prompt template'leri tanımla
@@ -481,23 +498,43 @@ def save_symptom_log(date, disease_type, symptoms, severity, notes):
 
 def get_disease_info(disease_type):
     """Hastalık bilgilerini getir"""
+    # Dropdown değerlerini veritabanı anahtarlarına çevir
+    disease_mapping = {
+        "Crohn Hastalığı": "crohn",
+        "Ülseratif Kolit": "ulcerative_colitis", 
+        "İBS (İrritabl Bağırsak Sendromu)": "ibs"
+    }
+    
+    # Eğer tam eşleşme varsa kullan, yoksa mapping'e bak
     if disease_type in INTESTINAL_DISEASES_DB:
-        disease = INTESTINAL_DISEASES_DB[disease_type]
+        db_key = disease_type
+    elif disease_type in disease_mapping:
+        db_key = disease_mapping[disease_type]
+    else:
+        return f"❌ '{disease_type}' hastalık bilgisi bulunamadı!"
+    
+    if db_key in INTESTINAL_DISEASES_DB:
+        disease = INTESTINAL_DISEASES_DB[db_key]
         return f"""
-**{disease['name']}**
+🏥 **{disease['name']}**
+
+📝 **Açıklama:**
 {disease['description']}
 
-**Önerilen Besinler:**
+✅ **Önerilen Besinler:**
 {', '.join(disease['recommended_foods'])}
 
-**Kaçınılması Gereken Besinler:**
+❌ **Kaçınılması Gereken Besinler:**
 {', '.join(disease['avoid_foods'])}
 
-**Diyet İpuçları:**
+💡 **Diyet İpuçları:**
 {chr(10).join(['• ' + tip for tip in disease['diet_tips']])}
+
+---
+🔍 **Not:** Bu bilgiler genel rehber niteliğindedir. Doktorunuzla görüşmeden diyet değişikliği yapmayın.
 """
     else:
-        return "❌ Hastalık bilgisi bulunamadı!"
+        return f"❌ '{disease_type}' hastalık bilgisi bulunamadı!"
 
 def get_symptom_history():
     """Semptom geçmişini getir"""
@@ -558,7 +595,9 @@ def get_food_history():
         for date, entries in food_data.items():
             history += f"📅 **{date}**\n"
             for entry in entries:
-                history += f"• {entry['meal_type']}: {entry['food_name']}\n"
+                # Geriye uyumluluk için hem food_name hem foods kontrol et
+                food_name = entry.get('food_name', entry.get('foods', 'Bilinmeyen besin'))
+                history += f"• {entry['meal_type']}: {food_name}\n"
                 if entry['symptoms']:
                     history += f"  ⚠️ Semptomlar: {entry['symptoms']}\n"
                 if entry['notes']:
@@ -583,7 +622,8 @@ def get_food_analysis():
         
         for date, entries in food_data.items():
             for entry in entries:
-                food_name = entry['food_name']
+                # Geriye uyumluluk için hem food_name hem foods kontrol et
+                food_name = entry.get('food_name', entry.get('foods', 'Bilinmeyen besin'))
                 symptoms = entry['symptoms']
                 
                 # Besin sayısını tut
@@ -778,10 +818,7 @@ with gr.Blocks(
                         value="Plan oluşturulduktan sonra burada görünecek...",
                         elem_classes=["output-markdown"]
                     )
-    
-    # Tab sistemi oluştur
-    with gr.Tabs():
-        with gr.Tab("🏋️‍♂️ Genel Sağlık & Fitness"):
+            
             # Q&A Bölümü
             gr.Markdown("---")
             gr.Markdown("### ❓ Planınız Hakkında Sorular")
@@ -798,7 +835,7 @@ with gr.Blocks(
                 value="Cevap burada görünecek...",
                 elem_classes=["output-markdown"]
             )
-            
+    
         with gr.Tab("🏥 Bağırsak Hastalıkları"):
             with gr.Row():
                 with gr.Column(scale=1):
@@ -974,8 +1011,8 @@ with gr.Blocks(
     
     # Bağırsak hastalıkları event handlers
     disease_info_btn.click(
-        fn=lambda: get_disease_info("crohn"),
-        inputs=[],
+        fn=get_disease_info,
+        inputs=[disease_type],
         outputs=[disease_info_output]
     )
     
