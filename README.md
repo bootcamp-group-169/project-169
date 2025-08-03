@@ -99,7 +99,8 @@ Bu proje, kişiselleştirilmiş beslenme ve fitness planları sunan AI destekli 
 
 - **Sprint 1:** 8 puan (Ekip tanışma, proje planlama, teknoloji seçimi)
 - **Sprint 2:** 17 puan (AI entegrasyonu, UI, test, dokümantasyon)
-- **Toplam Proje:** 25 puan (4 sprint planlanmış, her sprint 6-8 puan hedefi)
+- **Sprint 3:** 13 puan (Bağırsak hastalıkları modülü, semptom takibi, yemek takibi, tolerans takibi)
+- **Toplam Proje:** 38 puan (4 sprint planlanmış, her sprint 6-13 puan hedefi)
 
 ## Daily Scrum
 
